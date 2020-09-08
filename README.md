@@ -41,3 +41,17 @@ hiển thị danh sách học sinh là để giáo viên có thể thực hiện
 Để thực hiện được yêu cầu của bài tập này, chúng ta cần tạo ra một servlet khác tên là (CourseDetailServlet.java) mục đích của servlet này giúp chúng ta có thể
 truy vấn thông tin của course, và danh sách các học sinh đang theo học course này.
 
+## Bài tập 3
+
+Trong bài tập này trước hết chúng ta cần chuyển đổi toàn bộ những jsp của bài tập trước (course.jsp, course_detai.jsp) sang sử dụng JSTL.
+
+Sau đấy, chúng ta tiếp tục bổ sung thêm tính năng cho hệ thống JUNIOR như sau. Một course bình thường diễn ra sẻ có các bài kiểm tra, ví dụ kiểm tra miệng, kiểm tra
+15', kiểm tra 1 tiết. Chúng ta cần xây dựng tính năng tương tự cho hệ thống JUNIOR mục đích để thầy cô có thể chấm điểm học sinh. Như vậy trong
+trang (course_detail.jsp) chúng ta cần tạo một liên kết để dẫn tới trang châm điểm (course_grade.jsp). Chúng ta ngầm hiểu rằng với mỗi môn học sẻ luôn luôn có 2 
+kiểm tra theo sau: kiểm tra miệng, kiểm tra 15', kiểm trang 1 tiết, đối với một học sinh trong khóa học.
+
+Trang (course_grade.jsp) sẻ hiện thị một danh sách các cột là (1st On Board, 2st On Board, 1st Quick Test, 2st Quick Test, 1st Main Test, 2st Main Test, GPA), và các 
+hàng tương ứng với mỗi học sinh tham gia khóa học và điểm số tương ứng của học sinh đó. Để thuận tiện cho việc chấm điểm học sinh, cuối mỗi hàng chúng ta cần
+thêm vào một đường dẫn tới trang (course_mark.jsp). Trang (course_mark.jsp) sẻ cho phép giáo viên cho điểm cho học sinh đấy.
+
+

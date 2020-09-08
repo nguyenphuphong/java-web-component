@@ -1,9 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charshet="utf-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>JUNIOR</title>
 	<link href="assets/default.css" rel="stylesheet" type="text/css" />
 </head>
