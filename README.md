@@ -26,3 +26,18 @@ Các bạn create một Java Servlet tên là (CourseServlet.java) chứa tính 
 mãng danh sách hiển thị mẫu cho các course.
 
 (course.jsp) sẻ nhận dữ liệu từ (CourseServlet.java) để hiện thị danh sách course.
+
+## Bài tập 2
+
+Trong bài tập này các bạn sẻ tập luyện cách sử dụng Servlet để chuyển trang
+
+Trên màn hình hiện thị danh sách các courses (course.jsp) chúng ta đã làm từ bài tập trước. Chúng ta sẻ tạo ra một đường dẫn tên là (Manage), mục đích của đường dẫn
+này sẻ giúp giáo viên có thể quản lý được course mà họ được phân công giảng dạy. Như vậy khi giáo viên click vào đường dẫn này, hệ thống sẻ chuyển sang trang
+(course_detail.jsp)
+
+Trong trang (course_detail.jsp), chúng ta sẻ hiển thị lại thông tin của course này kèm theo một danh sách các học sinh đang theo học course đấy. Mục đích của việc
+hiển thị danh sách học sinh là để giáo viên có thể thực hiện điểm danh, chấm điểm, hay tương tác với từng học sinh một.
+
+Để thực hiện được yêu cầu của bài tập này, chúng ta cần tạo ra một servlet khác tên là (CourseDetailServlet.java) mục đích của servlet này giúp chúng ta có thể
+truy vấn thông tin của course, và danh sách các học sinh đang theo học course này.
+
