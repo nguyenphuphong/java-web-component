@@ -23,9 +23,9 @@
 		</div>
 		<div>
 			<h2>News</h2>
-			<p><a href="?n=1">Why should choose Greenwich University?</a></p>
-			<p><a href="?n=2">Top 10 students in 09/2020.</a></p>
-			<p><a href="?n=3">The way to increase your English skill.</a></p>
+			<c:forEach var="title" items="${NEW_TITLES}">
+				<p><a href="?n=${title.id}"><c:out value="${title.title}" /></a></p>
+			</c:forEach>
 		</div>
 	</div>
 	<div id="footer">

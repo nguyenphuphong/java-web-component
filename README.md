@@ -54,4 +54,41 @@ Trang (course_grade.jsp) sẻ hiện thị một danh sách các cột là (1st 
 hàng tương ứng với mỗi học sinh tham gia khóa học và điểm số tương ứng của học sinh đó. Để thuận tiện cho việc chấm điểm học sinh, cuối mỗi hàng chúng ta cần
 thêm vào một đường dẫn tới trang (course_mark.jsp). Trang (course_mark.jsp) sẻ cho phép giáo viên cho điểm cho học sinh đấy.
 
+# Bài tập 4
+
+Trong bài tập này, chúng ta sẻ làm quen với việc sử dụng datasource để tương tác với database
+
+Trước tiên, chúng ta cần chuyển tất cả những dữ liệu của những bài tập trước sang cấu trúc dữ liệu để lưu trử trong cơ sở dữ liệu (CSDL - Database) như sau.
+
+(tb_course)
+- (id): định danh của (tb_course) dưới dạng số tự tăng.
+- (title): tên môn học
+- (description): mô tả chi tiết môn học (dưới dạng HTML) để display trên trang web.
+- (open_date): ngày bắt đầu môn học
+- (close_date): ngày kết thúc môn học
+- (teacher_id): khóa ngoại định danh của giáo viên trong bảng (tb_user)
+
+(tb_user)
+- (id): định danh của (tb_user) dưới dạng số tự tăng.
+- (email): email của user
+
+(tb_course_users) - định danh của bảng này sẻ là một cặp (course_id, student_id)
+- (course_id): khóa ngoại định danh của course trong bảng (tb_course)
+- (student_id): khóa ngoại định danh của student trong bảng (tb_user)
+- (on_board_1): điểm kiểm tra miệng lần 1
+- (on_board_2): điểm kiểm tra miệng lần 2
+- (quick_test_1): điểm kiểm tra 15' lần 1
+- (quick_test_2): điểm kiểm tra 15' lần 2
+- (main_test_1): điểm kiểm tra 1 tiết lần 1
+- (main_test_2): điểm kiểm tra 1 tiết lần 2
+- (note): ghi chú của giáo viên về học sinh trong môn học này
+
+Trang (course_mark.jsp) sẻ được tinh chỉnh để giáo viên có thể cho điểm và ghi chú về học sinh.
+
+Các công thức liên quan để tính toán hiển thị:
+
+- tổng số học sinh tham gia một course được tính thông qua bảng (tb_course_users)
+- một course còn có thể được editable nếu như ngày hiện tại của hệ thống nằm giữa ngày (open_date) và (close_date)
+- điểm GPA của một môn học được tính như sau: trừ kiểm tra 1 tiết hệ số 2, còn lại tất cả là hệ số 1. Nếu bài kiểm tra nào chưa được cho điểm thì chưa tính vào
+điểm GPA.
 
