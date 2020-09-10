@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import vn.kase.web.jdbc.AbstractJdbcServlet;
 import vn.kase.web.pojo.News;
 
-@WebServlet("")
+@WebServlet(urlPatterns = {"", "/admin/news"})
 public class HomeServlet extends AbstractJdbcServlet {
 	private static final long serialVersionUID = 2301186982595091832L;
 
@@ -34,7 +34,7 @@ public class HomeServlet extends AbstractJdbcServlet {
 		List<News> titles = select(News.class, "SELECT id, title FROM tb_news");
 		req.setAttribute("NEW_TITLES", titles);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(req.getContextPath() + "/index.jsp");
         dispatcher.forward(req, resp);
     }
 }

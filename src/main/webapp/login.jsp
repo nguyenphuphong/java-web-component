@@ -5,7 +5,7 @@
 
 <head>
 	<title>JUNIOR</title>
-	<link href="assets/default.css" rel="stylesheet" type="text/css" />
+	<link href="${request.getContextPath()}/assets/default.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -35,6 +35,11 @@
 		</div>
 		<div>
 			<h2>Login</h2>
+			<c:if test="${not empty LOGIN_MESSAGE}">
+				<div id="header">
+					<h2><c:out value="${LOGIN_MESSAGE}" /></h2>
+				</div>
+			</c:if>
 			<form action="/login" method="POST">
 				<table>
 					<tr>

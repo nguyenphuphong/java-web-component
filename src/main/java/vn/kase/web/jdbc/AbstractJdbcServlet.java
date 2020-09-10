@@ -66,6 +66,39 @@ public abstract class AbstractJdbcServlet extends HttpServlet {
             throw new RuntimeException("Can't execute query: " + query, e);
         }
     }
+    
+    protected <T> T selectOne(Class<T> clazz, String query, Object... params) {
+    	List<T> ts = select(clazz, query, params);
+    	if (ts.isEmpty()) {
+    		return null;
+    	} else {
+    		return ts.get(0);
+    	}
+    }
+    
+    protected boolean exist(String query, Object... params) {
+    	try {
+            PreparedStatement stmt = buildPreparedStatement(query, params);
+            
+            ResultSet rs = stmt.executeQuery();
+			
+			return rs.next();
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "Can't execute query: " + query, e);
+            throw new RuntimeException("Can't execute query: " + query, e);
+		}
+    }
+
+    protected void persist(String query, Object... params) {
+        try {
+            PreparedStatement stmt = buildPreparedStatement(query, params);
+
+            stmt.executeUpdate();
+		} catch (SQLException e) {
+			LOGGER.log(Level.SEVERE, "Can't execute query: " + query, e);
+            throw new RuntimeException("Can't execute query: " + query, e);
+		}
+    }
 
     private <T> List<T> convertResultSet(ResultSet rs, Class<T> clazz) {
         try {

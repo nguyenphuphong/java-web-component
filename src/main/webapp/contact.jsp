@@ -5,7 +5,7 @@
 
 <head>
 	<title>JUNIOR</title>
-	<link href="assets/default.css" rel="stylesheet" type="text/css" />
+	<link href="${request.getContextPath()}/assets/default.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

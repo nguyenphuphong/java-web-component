@@ -92,3 +92,15 @@ Các công thức liên quan để tính toán hiển thị:
 - điểm GPA của một môn học được tính như sau: trừ kiểm tra 1 tiết hệ số 2, còn lại tất cả là hệ số 1. Nếu bài kiểm tra nào chưa được cho điểm thì chưa tính vào
 điểm GPA.
 
+## Bài tập 5
+
+Trong bài tập này chúng ta sẻ làm quen sử dụng ServletFilter để xác thực và cấp phép cho người dùng trong hệ thống JUNIOR.
+
+Dựa theo các bài tập trước, chung ta cần phần quyền như sau:
+
+- (student) học sinh chỉ xem được các danh sách các course mà học sinh đó tham gia và điểm số của mình ứng với mỗi course
+- (teacher) giáo viên có thể xem được danh sách các course mà giáo viên đó giảng dạy, được phép chỉnh sửa nội dung môn học, nhưng không được chỉnh sửa danh sách
+học sinh tham gia khóa học đó. Giáo viên có quyền chấm điểm học sinh và lưu trử ghi chú của từng học sinh trong môn học đấy.
+- (warden) quản giáo có thể xem được tất cả các course đang có trong hệ thống JUNIOR, được phép chỉnh sửa học sinh tham gia khóa học bất kì, nhưng quản giáo không
+được phép chấm điểm học chỉnh sửa ghi chú của bất kì học sinh.
+

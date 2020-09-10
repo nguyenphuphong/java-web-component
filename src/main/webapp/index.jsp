@@ -5,7 +5,7 @@
 
 <head>
 	<title>JUNIOR</title>
-	<link href="assets/default.css" rel="stylesheet" type="text/css" />
+	<link href="${request.getContextPath()}/assets/default.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -23,9 +23,21 @@
 		</div>
 		<div>
 			<h2>News</h2>
-			<c:forEach var="title" items="${NEW_TITLES}">
-				<p><a href="?n=${title.id}"><c:out value="${title.title}" /></a></p>
-			</c:forEach>
+			<c:set var="session" value="${sessionScope.SESSION}" />
+			<table>
+				<c:forEach var="title" items="${NEW_TITLES}">
+					<tr>
+						<td>
+							<a href="?n=${title.id}"><c:out value="${title.title}" /></a>
+						</td>
+						<c:if test="${session.administrator}">
+							<td>
+								<a href="/admin/news/edit?n=${title.id}">Edit</a>
+							</td>
+						</c:if>
+					</tr>
+				</c:forEach>
+			</table>
 		</div>
 	</div>
 	<div id="footer">
