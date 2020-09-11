@@ -24,6 +24,7 @@
                 <li><u>To create:</u> Click on "Create News" on side bar.</li>
                 <li><u>To edit:</u> Click on "Edit" in home page.</li>
                 <li><u>To delete:</u> Click "Edit" first then "DELETE" link will appear</li>
+                <li><u>To add attachments:</u> Click "Attachments"</li>
             </ul>
 		</div>
 		<div>
@@ -48,7 +49,9 @@
                             <input type="submit" value="Submit" />
                         </td>
                         <td>
-                            <a href="#">DELETE</a>
+                            <c:if test="${NEWS.id ne 0}">
+                                <a href="#">DELETE</a> | <a href="/admin/attachments/view?n=${NEWS.id}">ATTACHMENTS</a>
+                            </c:if>
                         </td>
                     </tr>
                 </table>

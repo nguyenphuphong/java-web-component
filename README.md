@@ -104,3 +104,16 @@ học sinh tham gia khóa học đó. Giáo viên có quyền chấm điểm h�
 - (warden) quản giáo có thể xem được tất cả các course đang có trong hệ thống JUNIOR, được phép chỉnh sửa học sinh tham gia khóa học bất kì, nhưng quản giáo không
 được phép chấm điểm học chỉnh sửa ghi chú của bất kì học sinh.
 
+## Bài tập 6
+
+Trong bài tập này chúng ta sẻ làm quen sử dụng Servlet để upload/download nội dung trong hệ thống JUNIOR.
+
+Chúng ta thấy một nhu cầu rất rỏ ràng là, giáo viên chấm điểm và cho ghi chú từng học sinh rất chậm, bởi vì phải thao tác cho từng học sinh trong danh sách học
+sinh trong lớp đấy, dẫn tới dể sai sót và giảm hiệu suất. Hệ thống JUNIOR sẻ cung cấp 1 tính năng giúp giáo viên có thể chấm điểm học sinh trong cùng một môn học
+dể dàng và thuận tiện hơn so với hiện tại, thông quan excel file.
+
+Ý tưởng như sau, hệ thống JUNIOR cho phép với mỗi môn học giáo viên có thể download về một file excel, nội dung của file excel này chứ thông tin các bạn theo học
+course đấy, các cột điểm và ghi chú tương ứng. Giáo viên chỉ cần thao tác trên file excel này như cho điểm, ghi chú. Sau khi thao tác xong, giáo viên có thể upload
+ngược lại file excel này lên hệ thống JUNIOR, hệ thống JUNIOR sẻ tự động dựa vào nội dung của file excel đấy và cho điểm, ghi chú tất cả các học sinh trong course
+của giáo viên đấy.
+
