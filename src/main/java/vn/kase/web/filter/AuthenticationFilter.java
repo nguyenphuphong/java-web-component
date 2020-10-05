@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import vn.kase.web.pojo.Session;
 
-@WebFilter(urlPatterns = "/admin/*")
+@WebFilter(urlPatterns = {"/admin/*", "/student/*"})
 public class AuthenticationFilter extends HttpFilter {
     private static final long serialVersionUID = 1L;
     

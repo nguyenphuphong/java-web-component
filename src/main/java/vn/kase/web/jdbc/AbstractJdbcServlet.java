@@ -107,8 +107,8 @@ public abstract class AbstractJdbcServlet extends HttpServlet {
             ResultSetMetaData md = rs.getMetaData();
             for (int i = 0; i < md.getColumnCount(); i++) {
                 String name = md.getColumnName(i + 1).toLowerCase();
-                
-                Field field = clazz.getDeclaredField(name);
+
+                Field field = clazz.getDeclaredField(dashToCamelCase(name));
                 field.setAccessible(true);
                 fieldMap.put(name, field);
             }
@@ -130,6 +130,20 @@ public abstract class AbstractJdbcServlet extends HttpServlet {
             LOGGER.log(Level.SEVERE, "Can't mapping result set", e);
             throw new RuntimeException("Can't mapping result set", e);
         }
+    }
+
+    private String dashToCamelCase(String dash) {
+        String[] splits = dash.split("_");
+
+        String camel = "";
+        for (int i = 0; i < splits.length; i++) {
+            String split = splits[i];
+            if (i > 0) {
+                split = Character.toUpperCase(split.charAt(0)) + split.substring(1).toLowerCase();
+            }
+            camel += split;
+        }
+        return camel;
     }
 
     private PreparedStatement buildPreparedStatement(String query, Object... params) throws SQLException {

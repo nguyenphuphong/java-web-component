@@ -24,5 +24,8 @@
     <c:if test="${session.administrator}">
         <li><a href="/admin/news/create">Create News</a></li>
     </c:if>
+    <c:if test="${session.student}">
+        <li><a href="/student/course">Courses</a></li>
+    </c:if>
     <li><a href="contact.jsp">Contact Us</a></li>
 </ul>

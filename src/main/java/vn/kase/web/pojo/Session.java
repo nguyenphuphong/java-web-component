@@ -7,7 +7,11 @@ public class Session {
 	public boolean isAdministrator() {
 		return roleId == 5;
 	}
-	
+
+	public boolean isStudent() {
+		return roleId == 1;
+	}
+
 	public String getEmail() {
 		return email;
 	}

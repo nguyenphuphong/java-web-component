@@ -12,6 +12,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-client</artifactId>
+            <version>8.0.4</version>
+        </dependency>      
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
@@ -59,6 +64,11 @@
                     <args>-Xmx512m -XX:PermSize=256m</args>
                     <removeDefaultWebapps>true</removeDefaultWebapps>
                     <context>ROOT</context>
+                    <systemVariables>
+                        <tomee.remote.support>true</tomee.remote.support>
+                        <tomee.serialization.class.whitelist>*</tomee.serialization.class.whitelist>
+                        <tomee.serialization.class.blacklist>-</tomee.serialization.class.blacklist>
+                    </systemVariables>
                 </configuration>
             </plugin>
             <plugin>
