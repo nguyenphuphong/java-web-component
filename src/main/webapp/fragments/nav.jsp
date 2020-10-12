@@ -27,5 +27,6 @@
     <c:if test="${session.student}">
         <li><a href="/student/course">Courses</a></li>
     </c:if>
+    <li><a href="/aboard">Aboard</a></li>
     <li><a href="contact.jsp">Contact Us</a></li>
 </ul>
